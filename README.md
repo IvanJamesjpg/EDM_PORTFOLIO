@@ -1,16 +1,24 @@
-## Hi there 👋
+# EDM-Portfolio - Patchak Supee
 
-<!--
-**IvanJamesjpg/IvanJamesjpg** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This portfolio will contain copies of my Enterprise Data Management Lab Exercises
 
-Here are some ideas to get you started:
+## About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+My name is Ivan James C. Gonzales, and I am passionate about technology and data management. I am currently expanding my skills in Enterprise Data Management, focusing on data analysis, cleaning, and preparation. With a background in Computer Science, I enjoy solving problems and finding efficient solutions through technology. I am always eager to learn new skills, stay updated with industry trends, and apply my knowledge to real-world challenges.
+---
+
+## Education
+
+- **College:** Currently pursuing a degree at City College of Angeles (CCA)
+- **High School:**
+  - Holy Angel University
+  - Dr. Clemente N. Dayrit Sr. High School
+  - Systems Plus College Foundation
+- **Elementary:** O.B. Montessori
+
+---
+
+## My Projects
+
+- **Midterm Lab Task 1:** [Data Cleaning and Preparation using EXCEL](#)
+- **Midterm Lab Task 2:** [Data Cleaning and Preparation using POWER QUERY](#)
