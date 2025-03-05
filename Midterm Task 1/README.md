@@ -27,4 +27,4 @@ For this task, we were given a file data from Excel (raw data), and our task is 
 ---
 
 ## STEP 4: Screenshot of My Output After Data Cleaning  
-![After Data Cleaning](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%201/after-cleaning.png?raw=true)
+![After Data Cleaning](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%201/AFTER.png?raw=true)
