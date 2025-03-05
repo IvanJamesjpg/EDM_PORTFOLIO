@@ -22,9 +22,9 @@ For this task, we were given a file data from Excel (raw data), and our task is 
 ---
 
 ## STEP 3: Screenshot of My Output Before Data Cleaning  
-![Before Data Cleaning]
+![Before Data Cleaning](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%201/before-cleaning.png?raw=true)
 
 ---
 
 ## STEP 4: Screenshot of My Output After Data Cleaning  
-![After Data Cleaning]  
+![After Data Cleaning](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%201/after-cleaning.png?raw=true)
