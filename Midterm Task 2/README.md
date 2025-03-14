@@ -1,48 +1,75 @@
-#MIDTERM TASK 2
+## Midterm Lab Task 2: Data Cleaning and Preparation using POWER QUERY
+## Data Cleaning Progress 
 
-let
-    Source = Csv.Document(File.Contents("D:\I101\Uncleaned_DS_jobs.csv"),[Delimiter=",", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
-    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"index", Int64.Type}, {"Job Title", type text}, {"Salary Estimate", type text}, {"Job Description", type text}, {"Rating", type number}, {"Company Name", type text}, {"Location", type text}, {"Headquarters", type text}, {"Size", type text}, {"Founded", Int64.Type}, {"Type of ownership", type text}, {"Industry", type text}, {"Sector", type text}, {"Revenue", type text}, {"Competitors", type text}}),
-    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Changed Type", {{"Salary Estimate", each Text.BeforeDelimiter(_, "("), type text}}),
-    #"Inserted Text Between Delimiters" = Table.AddColumn(#"Extracted Text Before Delimiter", "Min Sal", each Text.BetweenDelimiters([Salary Estimate], "$", "-"), type text),
-    #"Inserted Text Between Delimiters1" = Table.AddColumn(#"Inserted Text Between Delimiters", "MAX Sal", each Text.BetweenDelimiters([Salary Estimate], "$", " ", 1, 0), type text),
-    #"Added Custom" = Table.AddColumn(#"Inserted Text Between Delimiters1", "Role Type", each if Text.Contains([Job Title], "Data Scientist") then
-"Data Scientist"
-else if Text.Contains([Job Title], "Data Analyst") then
-"Data Analyst"
 
-else if Text.Contains([Job Title], "Data Engineer") then
-"Data Engineer"
-else if Text.Contains([Job Title], "Machine Learning") then
-"Machine Learning Engineer"
-else
-"other"),
-    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Role Type", type text}}),
-    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Custom", each if [Location]= "New Jersey" then ", NJ"
-else if [Location] = "Remote" then ", other"
-else if [Location]= "United States" then ", other"
-else if [Location]= "Texas" then ", TX"
-else if [Location]= "Patuxent" then ", MA"
-else if [Location]= "California" then ", CA"
-else if [Location]= "Utah" then ", UT"
-else [Location]),
-    #"Renamed Columns" = Table.RenameColumns(#"Added Custom1",{{"Custom", "Location Correction"}}),
-    #"Split Column by Delimiter" = Table.SplitColumn(#"Renamed Columns", "Location Correction", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), {"Location Correction.1", "Location Correction.2"}),
-    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Location Correction.1", type text}, {"Location Correction.2", type text}}),
-    #"Replaced Value" = Table.ReplaceValue(#"Changed Type2","Anne Rundell","MA",Replacer.ReplaceText,{"Location Correction.2"}),
-    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value",{{"Location Correction.2", "State Abbreviations"}}),
-    #"Split Column by Delimiter1" = Table.SplitColumn(#"Renamed Columns1", "Size", Splitter.SplitTextByDelimiter("to", QuoteStyle.Csv), {"Size.1", "Size.2"}),
-    #"Changed Type3" = Table.TransformColumnTypes(#"Split Column by Delimiter1",{{"Size.1", type text}, {"Size.2", type text}}),
-    #"Replaced Value1" = Table.ReplaceValue(#"Changed Type3","employees","",Replacer.ReplaceText,{"Size.1", "Size.2"}),
-    #"Inserted Number" = Table.AddColumn(#"Replaced Value1", "MinCompanySize", each Number.From([Size.1]), type number),
-    #"Inserted Number1" = Table.AddColumn(#"Inserted Number", "MaxCompanySize", each Number.From([Size.2]), type number),
-    #"Replaced Value2" = Table.ReplaceValue(#"Inserted Number1","-1","N/A",Replacer.ReplaceText,{"Competitors"}),
-    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","negative","0",Replacer.ReplaceText,{"Revenue"}),
-    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","-1","other",Replacer.ReplaceText,{"Industry"}),
-    #"Removed Columns" = Table.RemoveColumns(#"Replaced Value4",{"Size.1", "Size.2"}),
-    #"Split Column by Delimiter2" = Table.SplitColumn(#"Removed Columns", "Company Name", Splitter.SplitTextByDelimiter("#(lf)", QuoteStyle.Csv), {"Company Name.1", "Company Name.2"}),
-    #"Changed Type4" = Table.TransformColumnTypes(#"Split Column by Delimiter2",{{"Company Name.1", type text}, {"Company Name.2", type number}}),
-    #"Removed Columns1" = Table.RemoveColumns(#"Changed Type4",{"Company Name.2", "Job Description"})
-in
-    #"Removed Columns1"
+1. Download the Dataset
+   - Download the UncleanedDSJObs.csv from the source provided.
+
+2. Load Data in Excel
+   - Open Excel. 
+   - Go to the Data tab.
+   - Click on Get Data → From File → From Text/CSV.
+   - Select and load the UncleanedDSJObs.csv file.
+
+3. Open Power Query Editor
+   - Once the file is loaded, click on Transform Data to open the Power Query Editor.
+
+4. Duplicate the Raw Data
+   - Right-click on the query in the Queries pane (on the left) and select Duplicate. This will allow you to work on a clean version of the raw data without modifying the original.
+
+5. Data Cleaning Tasks
+   Now, follow the steps below for each specific data-cleaning task.
+
+a. Clean the "Salary Estimate" Column
+   - Go to the Transform tab.
+   - In the Salary Estimate column, click the drop-down arrow.
+   - Select Transform → Extract → Text Before Delimiter. 
+   - In the prompt, type "(" and click OK. This will remove all text after the open parenthesis, leaving only the salary estimate.
+
+ b. Create Min Salary and Max Salary Columns
+   For Min Salary:
+   - Select the Salary Estimate column.
+   - Go to the Add Column tab.
+   - Click Column from Examples → From Selection.
+   - In the first row, type 101 (as an example of the minimum salary).
+   - Press Enter, and the new column will be automatically filled with the same value.
+   - Rename the new column to Min Sal by double-clicking on the column header and typing the new name.
+
+   For Max Salary:
+   - Repeat the same process for the Max Sal column by typing the appropriate maximum value in the first row (e.g., 150 or the highest value you identify from the Salary Estimate).
+
+ c. Add Role Type Column
+   - Go to the Add Column tab and click on Custom Column.
+   - In the New column name box, type Role Type.
+   - In the Custom column formula box, enter the following formula:
+
+     if Text.Contains([Job Title], "Data Scientist") then "Data Scientist"
+     else if Text.Contains([Job Title], "Data Analyst") then "Data Analyst"
+     else if Text.Contains([Job Title], "Data Engineer") then "Data Engineer"
+     
+   - Click OK. This will create a new column that categorizes job roles based on keywords found in the Job Title column.
+
+6. Apply and Close
+   - Once all the steps are complete, click Close & Load to load the transformed data back into Excel.
+  
+## File Link:
+[File Link:] (https://github.com/TardyKoala1106/EDM_Midterms/blob/main/alozanomidtermlab2.xlsx) 
+
+## Output:
+# Clean data:
+<img src="clean.png" alt="Alt Text">
+
+# Salary by role type:
+<img src="salbyrole.png" alt="Alt Text">
+
+# Salary by role size ref:
+<img src="salbyrolesize.png" alt="Alt Text">
+
+# Salary by state ref:
+<img src="salbystate.png" alt="Alt Text">
+
+# States
+<img src="states.png" alt="Alt Text">
+
+## Dependencies:
+<img src="tables.png" alt="Alt Text">
