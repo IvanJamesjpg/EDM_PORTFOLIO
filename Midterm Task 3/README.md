@@ -38,7 +38,7 @@ e. **Which Sector has the Minimum and Maximum Average Salary**
 - If using Excel 2019 or later, insert a **Map Chart**.
 
 ## **File Link:**
-[File Link]([https://github.com/TardyKoala1106/EDM_Midterms/blob/main/Midterm%20Lab%20Task%203.xlsx](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/Midterm%20Lab%20Task%203.%20Creating%20PIVOT%20TABLE%20and%20DASHBOARD%20ivan.xlsx))
+[File Link]((https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/Midterm%20Lab%20Task%203.%20Creating%20PIVOT%20TABLE%20and%20DASHBOARD%20ivan.xlsx))
 
 ---
 
