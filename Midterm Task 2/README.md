@@ -73,5 +73,3 @@ c. Add Role Type Column
 ### **States**
 ![States](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%202/images/States.png?raw=true)
 
-## **Dependencies:**
-![Tables](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%202/images/tables.png?raw=true)
