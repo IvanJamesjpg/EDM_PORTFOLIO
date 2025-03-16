@@ -45,28 +45,22 @@ e. **Which Sector has the Minimum and Maximum Average Salary**
 
 ## **Output:**
 ### **Clean Data**
-![Clean Data](clean.png)
+![Clean Data](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/clean%20data.png)
 
 ### **State with Most Data Science Jobs**
-![State Map](states.png)
+![State Map](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/states.png)
 
 ### **Job Role with Highest Average Salary**
-![Salary by Role](salbyrole.png)
+![Salary by Role](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/jobrole.png)
 
 ### **Company Size That Pays the Highest**
-![Salary by Size](salbyrolesize.png)
-
-### **Sector with Lowest and Highest Jobs**
-![Sector Jobs](sector_jobs.png)
-
-### **Sector with Min and Max Salary**
-![Sector Salary](sector_salary.png)
+![Salary by Size](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/companysize.png)
 
 ### **Dashboard with Slicers**
-![Dashboard](dashboard.png)
+![Dashboard](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/Dashboard.png)
 
 ---
 
 ## **Dependencies:**
-![Tables](tables.png)
+![Tables](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/blob/main/Midterm%20Task%203/FIle/pivot.png)
 
