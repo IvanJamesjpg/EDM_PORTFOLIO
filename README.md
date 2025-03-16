@@ -21,4 +21,5 @@ My name is Ivan James C. Gonzales, and I am passionate about technology and data
 ## My Projects
 
 - **Midterm Lab Task 1:** [Data Cleaning and Preparation using Excel](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/tree/main/Midterm%20Task%201)  
-- Midterm Lab Task 2:[Data Cleaning and Preparation using Power Query]
+- **Midterm Lab Task 2:**[Data Cleaning and Preparation using Power Query](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/tree/main/Midterm%20Task%202)
+- **Midterm Lab Task 2:**=[Creating Pivot Tables and Charts](https://github.com/IvanJamesjpg/EDM_PORTFOLIO/tree/main/Midterm%20Task%203)
